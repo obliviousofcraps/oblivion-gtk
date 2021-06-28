@@ -1,0 +1,10 @@
+@use '../colors';
+
+tooltip {
+  background: colors.$selected;
+  color: colors.$button-bg;
+
+  label {
+    padding: 2px;
+  }
+}

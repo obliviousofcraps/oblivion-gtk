@@ -1,0 +1,55 @@
+@use '../colors';
+
+tabs {
+  background: colors.$background-2;
+
+  // .top > & {
+  //   border-bottom: 2px solid colors.$surface-3;
+  //   tab {
+  //     border-bottom: 2px solid transparent;
+  //     margin-bottom: -2px;
+  //   }
+  // }
+
+  // .right > & {
+  //   border-left: 2px solid colors.$surface-3;
+  //   tab {
+  //     border-left: 2px solid transparent;
+  //     margin-left: -2px;
+  //   }
+  // }
+
+  // .bottom > & {
+  //   border-top: 2px solid colors.$surface-3;
+  //   tab {
+  //     border-top: 2px solid transparent;
+  //     margin-top: -2px;
+  //   }
+  // }
+
+  // .left > & {
+  //   border-right: 2px solid colors.$surface-3;
+  //   tab {
+  //     border-right: 2px solid transparent;
+  //     margin-right: -2px;
+  //   }
+  // }
+
+  tab {
+    border-radius: 2px;
+    padding: 6px;
+    color: transparentize(colors.$foreground-color, 0.8);
+    transition: background 100ms ease-in-out;
+
+    header &:checked {
+      background: colors.$selected;
+      border-color: colors.$primary-accent;
+      color: colors.$button-bg;
+    }
+
+    header &:hover:not(:checked) {
+      background: colors.$button-bg;
+      border-color: transparentize(colors.$foreground-color, 0.8);
+    }
+  }
+}

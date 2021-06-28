@@ -1,0 +1,13 @@
+@use '../colors';
+
+menu {
+  background: colors.$background-2;
+  padding: 6px;
+  menuitem {
+    padding: 5px;
+    border-radius: 4px;
+    &:hover { 
+      background: colors.$selected;
+      color: colors.$background-2; }
+  }
+}

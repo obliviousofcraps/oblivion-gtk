@@ -1,0 +1,40 @@
+@use '../colors';
+
+button {
+  transition: background 200ms ease-in-out;
+  background: colors.$button-bg;
+  padding: 8px;
+  border-radius: 4px;
+
+  &:hover:not(:active) { 
+    background: colors.$selected;
+    color: colors.$background-2;}
+  &:disabled { opacity: 0.3; }
+
+  &:checked, &.suggested-action {
+    background: colors.$selected;
+    color: lighten(colors.$background-2, 5%);
+    
+    &:hover:not(:active) { 
+      background: darken(colors.$selected, 1%);
+      color: colors.$foreground-1; 
+    }
+  }
+
+  &.destructive-action {
+    background: colors.$accent-1;
+    color: lighten(colors.$accent-1, 40%);
+    &:hover:not(:active) { background: darken(colors.$accent-1, 5%); }
+  }
+
+  &.circular {
+    border-radius: 100%;
+    padding: 8px;
+  }
+
+  &.flat {
+    background: transparent;
+    &:hover { color: rgba(255,255,255,.7); }
+    &:checked { color: rgba(255,255,255,.8); }
+  }
+}

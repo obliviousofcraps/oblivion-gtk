@@ -1,0 +1,11 @@
+@use '../colors';
+
+notebook {
+  stack {
+    &:only-child { background: colors.$surface-1; 
+    
+    widget {
+      background: colors.$background-1;
+    }}
+  }
+}

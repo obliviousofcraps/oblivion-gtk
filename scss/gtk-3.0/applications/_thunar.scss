@@ -1,0 +1,86 @@
+@use "../colors"; 
+
+window.thunar {
+  background: none;
+
+  treeview {
+    background: none;
+  }
+
+  grid {
+    *:selected,
+    *:active {
+      background: colors.$selected;
+      color: colors.$button-bg;
+      border-radius: 4px;
+    }
+
+    *:hover {
+      background: lighten(colors.$button-bg, 10%);
+      color: lighten(colors.$foreground-1, 10%);
+      border-radius: 4px;
+    }
+
+   *:selected:hover {
+     background: darken(colors.$selected, 1%);
+   }
+  }
+
+  .sidebar {
+    //background-color: rgba(29, 33, 42, 0.75);
+    background-color: colors.$background-1;
+    padding: 12px;
+  }
+
+  treeview {
+    padding: 1px;
+    &:selected {
+      background: colors.$selected;
+      color: colors.$button-bg;
+    }
+  }
+
+  .frame {
+    border: 0;
+  }
+
+  paned grid {
+    background: colors.$background-1;
+  }
+
+  toolbar {
+    background: colors.$background-2;
+
+    entry {
+      selection {
+        background: colors.$selected;
+        color: colors.$background-2;
+      }
+    }
+
+    box {
+      padding: 2px 5px;
+    }
+
+    button {
+      padding: 0px 4px;
+      margin: 2px 0px;
+      border-radius: 10px;
+      &:hover{
+        background: colors.$selected;
+        color: colors.$button-bg;
+        border-radius: 8px;
+      }
+    }
+  }
+  toolbar * {
+    background: none;
+  }
+
+  /* hide separator */
+  separator {
+    background-image: image(#2a2f3b);
+    background-size: 1px 1px;
+    background-position: center center;
+  }
+}

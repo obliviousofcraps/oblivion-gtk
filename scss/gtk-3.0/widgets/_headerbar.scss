@@ -1,0 +1,57 @@
+@use '../colors';
+
+headerbar {
+  background: colors.$headerbar-bg;
+  padding: 6px;
+
+  box.horizontal {
+    &.right > button.titlebutton:last-child {
+      margin-right: 1px;
+    }
+
+    &.left > button.titlebutton:first-child {
+      margin-left: 0px;
+    }
+  }
+
+  button{
+    margin: 0 4px;
+  }
+
+  button.titlebutton:not(.appmenu) {
+    background: transparent;
+    margin: -6px 0;
+    padding: 15px 4px;
+    border-radius: 0;
+
+    &:nth-last-child(-n+2) {
+      margin-left: -6px;
+    }
+
+    $titlebutton_to_color: (
+      minimize: colors.$minimize-fg,
+      maximize: colors.$maximize-fg,
+      close: colors.$close-fg
+    );
+
+    @each $type, $color in $titlebutton_to_color {
+      &.#{$type} {
+        color: $color;
+        &:hover {
+          background-color: transparent;
+          color: #e3e3e3;
+        }
+      }
+    }
+
+    &:hover {
+      color: rgba(0,0,0,0.5);
+    }
+  }
+
+  button.titlebutton.appmenu {
+    &:not(:active):not(:checked) {
+      background: transparent;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use '../colors';
+
+list {
+  background: colors.$background-1;
+
+  row {
+    padding: 6px;
+    &:hover {
+      background: colors.$button-bg;
+      color: colors.$foreground-1;
+      border-radius: 4px;
+    }
+
+    button {
+      margin: 0 4px;
+    }
+  }
+
+  
+}
